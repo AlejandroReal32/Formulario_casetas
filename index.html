@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casetas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <img src="./img/Logo-cesavenay.png" id="logo-cesavenay">
+        <h1>Casetas de Inspeccion Agricola</h1>
+        <!-- Tab Links -->
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'personal')">Sitio de Inspeccion</button>
+            <button class="tablinks" onclick="openTab(event, 'contact')">Informacion General</button>
+            <button class="tablinks" onclick="openTab(event, 'education')">Informacion de la Mercancia</button>
+            <button class="tablinks" onclick="openTab(event, 'employment')">Informacion del Cargamento</button>
+            <button class="tablinks" onclick="openTab(event, 'additional')">Incumplimiento Federal</button>
+            <button class="tablinks" onclick="openTab(event, 'additional')">Incumplimiento Estatal</button>
+            <button class="tablinks" onclick="openTab(event, 'additional')">Datos de Expedicion del Certificado de Aportacion</button>
+        </div>
+        
+        <!-- Form with 5 tabs -->
+        <form action="process.php" method="post" id="multiTabForm">
+            <!-- Sitio de Inspeccion -->
+            <div id="personal" class="tabcontent" style="display: block;">
+                <h2>Sitio de Inspeccion</h2>
+                <div class="form-group">
+                    <label for="firstName">Tipo de Sitio de Inspeccion</label>
+                    <input type="text" id="sitioinspeccion" name="sitioInspeccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Entidad Federativa</label>
+                    <input type="text" id="entidad" name="entidad" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Sitio de Inspeccion</label>
+                    <select id="gender" name="gender">
+                        <option value="-"> - </option>
+                        <option value="San Jose de Gracias Libre">San Jose de Gracias Libre</option>
+                        <option value="San Jose de Gracias Cuota">San Jose de Gracias Cuota</option>
+                        <option value="La Bayona">La Bayona</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Fecha de Inspeccion</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Hora de Inspeccion</label>
+                    <input type="time" id="dob" name="dob" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="next-btn" onclick="openTab(event, 'contact')">Next</button>
+                </div>
+            </div>
+            
+            <!-- Informacion General -->
+            <div id="contact" class="tabcontent">
+                <h2>Informacion General</h2>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" name="zip">
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'personal')">Previous</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'education')">Next</button>
+                </div>
+            </div>
+            
+            <!-- Informacion de la Mercancia -->
+            <div id="education" class="tabcontent">
+                <h2>Informacion de la Mercancia</h2>
+                <div class="form-group">
+                    <label for="highestDegree">Highest Degree:</label>
+                    <select id="highestDegree" name="highestDegree">
+                        <option value="high-school">High School</option>
+                        <option value="associate">Associate Degree</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="phd">PhD</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="institution">Institution:</label>
+                    <input type="text" id="institution" name="institution">
+                </div>
+                <div class="form-group">
+                    <label for="fieldOfStudy">Field of Study:</label>
+                    <input type="text" id="fieldOfStudy" name="fieldOfStudy">
+                </div>
+                <div class="form-group">
+                    <label for="graduationYear">Graduation Year:</label>
+                    <input type="number" id="graduationYear" name="graduationYear" min="1900" max="2099">
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'contact')">Previous</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'employment')">Next</button>
+                </div>
+            </div>
+            
+            <!-- Informacion del Cargamento -->
+            <div id="employment" class="tabcontent">
+                <h2>Informacion del Cargamento</h2>
+                <div class="form-group">
+                    <label for="currentJob">Current Job Title:</label>
+                    <input type="text" id="currentJob" name="currentJob">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry:</label>
+                    <input type="text" id="industry" name="industry">
+                </div>
+                <div class="form-group">
+                    <label for="yearsExperience">Years of Experience:</label>
+                    <input type="number" id="yearsExperience" name="yearsExperience" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="skills">Key Skills:</label>
+                    <textarea id="skills" name="skills" rows="3" placeholder="List your key skills separated by commas"></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
+                </div>
+            </div>
+            
+            <!-- Additional Info Tab -->
+            <div id="additional" class="tabcontent">
+                <h2>Additional Information</h2>
+                <div class="form-group">
+                    <label for="interests">Interests/Hobbies:</label>
+                    <textarea id="interests" name="interests" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="references">References:</label>
+                    <textarea id="references" name="references" rows="3" placeholder="Name, relationship, contact info"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information:</label>
+                    <textarea id="additionalInfo" name="additionalInfo" rows="5" placeholder="Any other information you'd like to share"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions</label>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'employment')">Previous</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
