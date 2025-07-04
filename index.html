@@ -60,24 +60,36 @@
             <div id="contact" class="tabcontent">
                 <h2>Informacion General</h2>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="tm">Tipo de Mercancia</label>
+                    <select id="Tipo_de_mercancia" name="Tipo_de_mercancia">
+                        <option value="Elige una opcion"> Elige una opcion </option>
+                        <option value="no_regulada">No Regulada</option>
+                        <option value="regulada">Regulada</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Documento de movilización (Presenta/No presenta)</label>
+                    <select name="" id="">
+                        <option value="Elige una opcion"> Elige una opcion </option>
+                        <option value="no_regulada">No Presenta</option>
+                        <option value="regulada">Presenta</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" rows="3"></textarea>
+                    <label for="address">Tipo de documento de movilización</label>
+                    <input type="text" id="Tipo_de_doc" name="Tipo_de_doc">
                 </div>
                 <div class="form-group">
-                    <label for="city">City:</label>
+                    <label for="city">Folio del dodumento de movilizacion</label>
                     <input type="text" id="city" name="city">
                 </div>
                 <div class="form-group">
-                    <label for="zip">Zip Code:</label>
-                    <input type="text" id="zip" name="zip">
+                    <label for="zip">Tipo de Revision</label>
+                    <select name="" id="">
+                        <option value="Elige una opcion"> Elige una opcion </option>
+                        <option value="no_regulada">Fisica</option>
+                        <option value="regulada">Documental</option>
+                    </select>
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'personal')">Previous</button>

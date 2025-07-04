@@ -24,8 +24,8 @@ h1 {
 }
 
 h2 {
-    color: #3498db;
-    border-bottom: 2px solid #3498db;
+    color: #4f7e3f;
+    border-bottom: 2px solid #7aa945;
     padding-bottom: 5px;
     margin-top: 0;
 }
@@ -62,7 +62,7 @@ h2 {
 }
 
 .tab button.active {
-    background-color: #3498db;
+    background-color: #7aa945;
     color: white;
 }
 
