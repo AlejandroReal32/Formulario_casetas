@@ -147,12 +147,12 @@ button {
 }
 
 .next-btn, .submit-btn {
-    background-color: #3498db;
+    background-color: #1fa557;
     color: white;
 }
 
 .next-btn:hover, .submit-btn:hover {
-    background-color: #2980b9;
+    background-color: #1d9429;
 }
 
 .submit-btn {

@@ -12,19 +12,19 @@
         <h1>Casetas de Inspeccion Agricola</h1>
         <!-- Tab Links -->
         <div class="tab">
-            <button class="tablinks active" onclick="openTab(event, 'personal')">Sitio de Inspeccion</button>
-            <button class="tablinks" onclick="openTab(event, 'contact')">Informacion General</button>
-            <button class="tablinks" onclick="openTab(event, 'education')">Informacion de la Mercancia</button>
-            <button class="tablinks" onclick="openTab(event, 'employment')">Informacion del Cargamento</button>
-            <button class="tablinks" onclick="openTab(event, 'additional')">Incumplimiento Federal</button>
-            <button class="tablinks" onclick="openTab(event, 'additional')">Incumplimiento Estatal</button>
-            <button class="tablinks" onclick="openTab(event, 'additional')">Datos de Expedicion del Certificado de Aportacion</button>
+            <button class="tablinks active" onclick="openTab(event, 'sitio_inspeccion')">Sitio de Inspeccion</button>
+            <button class="tablinks" onclick="openTab(event, 'info_general')">Informacion General</button>
+            <button class="tablinks" onclick="openTab(event, 'info_mercancia')">Informacion de la Mercancia</button>
+            <button class="tablinks" onclick="openTab(event, 'info_carga')">Informacion del Cargamento</button>
+            <button class="tablinks" onclick="openTab(event, 'incumplimiento_federal')">Incumplimiento Federal</button>
+            <button class="tablinks" onclick="openTab(event, 'incumplimiento_estatal')">Incumplimiento Estatal</button>
+            <button class="tablinks" onclick="openTab(event, 'DECA')">Datos de Expedicion del Certificado de Aportacion</button>
         </div>
         
         <!-- Form with 5 tabs -->
         <form action="process.php" method="post" id="multiTabForm">
             <!-- Sitio de Inspeccion -->
-            <div id="personal" class="tabcontent" style="display: block;">
+            <div id="sitio_inspeccion" class="tabcontent" style="display: block;">
                 <h2>Sitio de Inspeccion</h2>
                 <div class="form-group">
                     <label for="firstName">Tipo de Sitio de Inspeccion</label>
@@ -57,7 +57,7 @@
             </div>
             
             <!-- Informacion General -->
-            <div id="contact" class="tabcontent">
+            <div id="info_general" class="tabcontent">
                 <h2>Informacion General</h2>
                 <div class="form-group">
                     <label for="tm">Tipo de Mercancia</label>
@@ -98,89 +98,225 @@
             </div>
             
             <!-- Informacion de la Mercancia -->
-            <div id="education" class="tabcontent">
+            <div id="info_mercancia" class="tabcontent">
                 <h2>Informacion de la Mercancia</h2>
                 <div class="form-group">
-                    <label for="highestDegree">Highest Degree:</label>
-                    <select id="highestDegree" name="highestDegree">
-                        <option value="high-school">High School</option>
-                        <option value="associate">Associate Degree</option>
-                        <option value="bachelor">Bachelor's Degree</option>
-                        <option value="master">Master's Degree</option>
-                        <option value="phd">PhD</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label for="highestDegree">Mercancia</label>
+                   <input type="text" id="mercancia" name="mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="institution">Institution:</label>
-                    <input type="text" id="institution" name="institution">
+                    <label for="institution">Variedad de la mercancia</label>
+                    <input type="text" id="variedad_mercancia" name="variedad_mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="fieldOfStudy">Field of Study:</label>
-                    <input type="text" id="fieldOfStudy" name="fieldOfStudy">
+                    <label for="fieldOfStudy">Presentacion de la mercancia</label>
+                    <input type="text" id="P_mercancia" name="P_mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="graduationYear">Graduation Year:</label>
-                    <input type="number" id="graduationYear" name="graduationYear" min="1900" max="2099">
+                    <label for="graduationYear">Tipo de embalaje</label>
+                    <input type="text" id="tipo_embalaje" name="tipo_embalaje">
                 </div>
+                <div class="form-group">
+                    <label for="graduationYear">Cantidad</label>
+                    <input type="number" id="cantidad" name="cantidad">
+                </div>
+                 <div class="form-group">
+                    <label for="graduationYear">Peso</label>
+                    <input type="number" id="peso" name="peso">
+                </div>
+
+                 <div class="form-group">
+                    <label for="graduationYear">Cantidad Total</label>
+                    <input type="text" id="cantidad_total" name="cantidad_total">
+                </div>
+
+                 <div class="form-group">
+                    <label for="graduationYear">Unidad de medida</label>
+                    <input type="text" id="unidad_medida" name="unidad_medida" placeholder="Kilogramos">
+                </div>
+
+                 <div class="form-group">
+                    <label for="graduationYear">Motivo de movilizacion</label>
+                    <input type="text" id="motivo_mov" name="motivo_mov">
+                </div>
+
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'contact')">Previous</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'employment')">Next</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'contact')">Anterior</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'employment')">Siguiente</button>
                 </div>
             </div>
             
             <!-- Informacion del Cargamento -->
-            <div id="employment" class="tabcontent">
+            <div id="info_carga" class="tabcontent">
                 <h2>Informacion del Cargamento</h2>
                 <div class="form-group">
-                    <label for="currentJob">Current Job Title:</label>
-                    <input type="text" id="currentJob" name="currentJob">
+                    <label for="estadoOrigen">Estado origen:</label>
+                    <input type="text" id="estadoOrigen" name="estadoOrigen">
                 </div>
                 <div class="form-group">
-                    <label for="company">Company:</label>
-                    <input type="text" id="company" name="company">
+                    <label for="municipioOrigen">Municipio origen:</label>
+                    <input type="text" id="municipioOrigen" name="municipioOrigen">
                 </div>
                 <div class="form-group">
-                    <label for="industry">Industry:</label>
-                    <input type="text" id="industry" name="industry">
+                    <label for="estadoDestino">Estado destino:</label>
+                    <input type="text" id="estadoDestino" name="estadoDestino">
                 </div>
                 <div class="form-group">
-                    <label for="yearsExperience">Years of Experience:</label>
-                    <input type="number" id="yearsExperience" name="yearsExperience" min="0" max="100">
+                    <label for="municipioDestino">Municipio destino:</label>
+                    <input type="text" id="municipioDestino" name="municipioDestino">
                 </div>
                 <div class="form-group">
-                    <label for="skills">Key Skills:</label>
-                    <textarea id="skills" name="skills" rows="3" placeholder="List your key skills separated by commas"></textarea>
+                    <label for="empresaOrigen">Empresa origen:</label>
+                    <input type="text" id="empresaOrigen" name="empresaOrigen">
+                </div>
+                <div class="form-group">
+                    <label for="empresaDestino">Empresa destino:</label>
+                    <input type="text" id="empresaDestino" name="empresaDestino">
+                </div>
+                <div class="form-group">
+                    <label for="tipoVehiculo">Tipo de vehículo:</label>
+                    <input type="text" id="tipoVehiculo" name="tipoVehiculo">
+                </div>
+                <div class="form-group">
+                    <label for="descripcionVehiculo">Descripción de vehículo:</label>
+                    <input type="text" id="descripcionVehiculo" name="descripcionVehiculo">
+                </div>
+                <div class="form-group">
+                    <label for="placas">Placas:</label>
+                    <input type="text" id="placas" name="placas">
+                </div>
+                <div class="form-group">
+                    <label for="fleje">Fleje:</label>
+                    <input type="text" id="fleje" name="fleje">
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
                     <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
                 </div>
             </div>
+
+            <!-- Incuplimineto Federal -->
+            <div id="incumplimiento_federal" class="tabcontent">
+                <h2>Incumplimiento Federal</h2>
+                <div class="form-group">
+                    <label for="FcumpleNoCumple">Cumple / No cumple:</label>
+                    <input type="text" id="FcumpleNoCumple" name="FcumpleNoCumple">
+                </div>
+                <div class="form-group">
+                    <label for="FresultadoVerificacion">Resultado de la verificación e inspección:</label>
+                    <textarea id="FresultadoVerificacion" name="FresultadoVerificacion" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="FaccionResultante">Acción resultante:</label>
+                    <textarea id="FaccionResultante" name="FaccionResultante" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="FfolioActa">Folio del Acta Circunstanciada:</label>
+                    <input type="text" id="FfolioActa" name="FfolioActa">
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
+                </div>
+            </div>
+
+             <!-- Incuplimineto Estatal -->
+            <div id="incumplimiento_estatal" class="tabcontent">
+                <h2>Incumplimiento Estatal</h2>
+                <div class="form-group">
+                    <label for="EcumpleNoCumple">Cumple / No cumple:</label>
+                    <input type="text" id="EcumpleNoCumple" name="EcumpleNoCumple">
+                </div>
+                <div class="form-group">
+                    <label for="EresultadoVerificacion">Resultado de la verificación e inspección:</label>
+                    <textarea id="EresultadoVerificacion" name="EresultadoVerificacion" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="EaccionResultante">Acción resultante:</label>
+                    <textarea id="EaccionResultante" name="EaccionResultante" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="EfolioActa">Folio del Acta Circunstanciada:</label>
+                    <input type="text" id="EfolioActa" name="EfolioActa">
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
+                </div>
+            </div>
+
             
-            <!-- Additional Info Tab -->
-            <div id="additional" class="tabcontent">
-                <h2>Additional Information</h2>
+            <!-- Datos de expedición del Certificado de Aportación -->
+            <div id="DECA" class="tabcontent">
+                <h2>Datos de expedición del Certificado de Aportación</h2>
                 <div class="form-group">
-                    <label for="interests">Interests/Hobbies:</label>
-                    <textarea id="interests" name="interests" rows="3"></textarea>
+                    <label for="numeroFolio">Número de Folio:</label>
+                    <input type="text" id="numeroFolio" name="numeroFolio">
                 </div>
                 <div class="form-group">
-                    <label for="references">References:</label>
-                    <textarea id="references" name="references" rows="3" placeholder="Name, relationship, contact info"></textarea>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha">
                 </div>
                 <div class="form-group">
-                    <label for="additionalInfo">Additional Information:</label>
-                    <textarea id="additionalInfo" name="additionalInfo" rows="5" placeholder="Any other information you'd like to share"></textarea>
+                    <label for="productor">Productor:</label>
+                    <input type="text" id="productor" name="productor">
+                </div>
+                <div class="form-group">
+                    <label for="numeroInscripcion">Número de Inscripción:</label>
+                    <input type="text" id="numeroInscripcion" name="numeroInscripcion">
+                </div>
+                <div class="form-group">
+                    <label for="numeroTarjeta">Número de Tarjeta:</label>
+                    <input type="text" id="numeroTarjeta" name="numeroTarjeta">
+                </div>
+                <div class="form-group">
+                    <label for="localidad">Localidad:</label>
+                    <input type="text" id="localidad" name="localidad">
+                </div>
+                <div class="form-group">
+                    <label for="predio">Predio:</label>
+                    <input type="text" id="predio" name="predio">
+                </div>
+                <div class="form-group">
+                    <label for="noSello">No. Sello:</label>
+                    <input type="text" id="noSello" name="noSello">
+                </div>
+                <div class="form-group">
+                    <label for="campanasFitosanitarias">Campañas Fitosanitarias:</label>
+                    <input type="text" id="campanasFitosanitarias" name="campanasFitosanitarias">
+                </div>
+                <div class="form-group">
+                    <label for="expedidoEn">Expedido en:</label>
+                    <input type="text" id="expedidoEn" name="expedidoEn">
+                </div>
+                <div class="form-group">
+                    <label for="fechaExpedicion">Fecha de expedición:</label>
+                    <input type="date" id="fechaExpedicion" name="fechaExpedicion">
+                </div>
+                <div class="form-group">
+                    <label for="diasVigencia">Días de vigencia:</label>
+                    <input type="number" id="diasVigencia" name="diasVigencia">
+                </div>
+                <div class="form-group">
+                    <label for="jlsvAutoriza">JLSV que autoriza:</label>
+                    <input type="text" id="jlsvAutoriza" name="jlsvAutoriza">
+                </div>
+                <div class="form-group">
+                    <label for="personalInspeccion">Personal que realiza la inspección:</label>
+                    <input type="text" id="personalInspeccion" name="personalInspeccion">
+                </div>
+                <div class="form-group">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" name="observaciones" rows="3"></textarea>
                 </div>
                 <div class="form-group checkbox-group">
                     <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I agree to the terms and conditions</label>
+                    <label for="terms">Accepto que todos los datos son correctos</label>
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'employment')">Previous</button>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </div>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                   </div>
             </div>
         </form>
     </div>

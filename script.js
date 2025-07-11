@@ -26,9 +26,9 @@ document.getElementById('multiTabForm').addEventListener('submit', function(e) {
     // You can add additional validation here if needed
     const termsChecked = document.getElementById('terms').checked;
     if (!termsChecked) {
-        alert('Please agree to the terms and conditions');
+        alert('Accepto que todos los datos son correctos');
         e.preventDefault();
-        openTab(e, 'additional');
+        openTab(e, 'DECA');
         document.getElementById('terms').focus();
     }
     
