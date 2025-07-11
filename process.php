@@ -2,33 +2,45 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect all form data
     $formData = array(
-        'personal' => array(
+        'sitio_inspeccion' => array(
             'firstName' => $_POST['firstName'] ?? '',
             'lastName' => $_POST['lastName'] ?? '',
             'dob' => $_POST['dob'] ?? '',
             'gender' => $_POST['gender'] ?? ''
         ),
-        'contact' => array(
+        'info_general' => array(
             'email' => $_POST['email'] ?? '',
             'phone' => $_POST['phone'] ?? '',
             'address' => $_POST['address'] ?? '',
             'city' => $_POST['city'] ?? '',
             'zip' => $_POST['zip'] ?? ''
         ),
-        'education' => array(
+        'info_mercancia' => array(
             'highestDegree' => $_POST['highestDegree'] ?? '',
             'institution' => $_POST['institution'] ?? '',
             'fieldOfStudy' => $_POST['fieldOfStudy'] ?? '',
             'graduationYear' => $_POST['graduationYear'] ?? ''
         ),
-        'employment' => array(
+        'info_carga' => array(
             'currentJob' => $_POST['currentJob'] ?? '',
             'company' => $_POST['company'] ?? '',
             'industry' => $_POST['industry'] ?? '',
             'yearsExperience' => $_POST['yearsExperience'] ?? '',
             'skills' => $_POST['skills'] ?? ''
         ),
-        'additional' => array(
+        'incumplimiento_federal' => array(
+            'interests' => $_POST['interests'] ?? '',
+            'references' => $_POST['references'] ?? '',
+            'additionalInfo' => $_POST['additionalInfo'] ?? '',
+            'terms' => isset($_POST['terms']) ? 'Agreed' : 'Not agreed'
+        ),
+        'incumplimiento_estatal' => array(
+            'interests' => $_POST['interests'] ?? '',
+            'references' => $_POST['references'] ?? '',
+            'additionalInfo' => $_POST['additionalInfo'] ?? '',
+            'terms' => isset($_POST['terms']) ? 'Agreed' : 'Not agreed'
+        ),
+        'DECA' => array(
             'interests' => $_POST['interests'] ?? '',
             'references' => $_POST['references'] ?? '',
             'additionalInfo' => $_POST['additionalInfo'] ?? '',
