@@ -18,7 +18,7 @@
             <button class="tablinks" onclick="openTab(event, 'info_carga')">Informacion del Cargamento</button>
             <button class="tablinks" onclick="openTab(event, 'incumplimiento_federal')">Incumplimiento Federal</button>
             <button class="tablinks" onclick="openTab(event, 'incumplimiento_estatal')">Incumplimiento Estatal</button>
-            <button class="tablinks" onclick="openTab(event, 'DECA')">Datos de Expedicion del Certificado de Aportacion</button>
+            <button class="tablinks" onclick="openTab(event, 'deca')">Datos de Expedicion del Certificado de Aportacion</button>
         </div>
         
         <!-- Form with 7 tabs -->
@@ -27,32 +27,32 @@
             <div id="sitio_inspeccion" class="tabcontent" style="display: block;">
                 <h2>Sitio de Inspeccion</h2>
                 <div class="form-group">
-                    <label for="firstName">Tipo de Sitio de Inspeccion</label>
-                    <input type="text" id="sitioinspeccion" name="sitioInspeccion" required>
+                    <label for="tipositioInspeccion">Tipo de Sitio de Inspeccion</label>
+                    <input type="text" id="tipositioInspeccion" name="tipositioInspeccion" required>
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Entidad Federativa</label>
+                    <label for="entidad">Entidad Federativa</label>
                     <input type="text" id="entidad" name="entidad" required>
                 </div>
                 <div class="form-group">
-                    <label for="dob">Sitio de Inspeccion</label>
-                    <select id="gender" name="gender">
-                        <option value="-"> - </option>
+                    <label for="sitio">Sitio de Inspeccion</label>
+                    <select id="sitio" name="sitio">
+                        <option value="Elige una opcion"> Elige una opcion </option>
                         <option value="San Jose de Gracias Libre">San Jose de Gracias Libre</option>
                         <option value="San Jose de Gracias Cuota">San Jose de Gracias Cuota</option>
                         <option value="La Bayona">La Bayona</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="gender">Fecha de Inspeccion</label>
-                    <input type="date" id="dob" name="dob" required>
+                    <label for="fecha">Fecha de Inspeccion</label>
+                    <input type="date" id="fecha" name="fecha" required>
                 </div>
                 <div class="form-group">
-                    <label for="gender">Hora de Inspeccion</label>
-                    <input type="time" id="dob" name="dob" required>
+                    <label for="hora">Hora de Inspeccion</label>
+                    <input type="time" id="hora" name="hora" required>
                 </div>
                 <div class="button-group">
-                    <button type="button" class="next-btn" onclick="openTab(event, 'contact')">Next</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'info_general')">Siguiente</button>
                 </div>
             </div>
             
@@ -60,40 +60,40 @@
             <div id="info_general" class="tabcontent" >
                 <h2>Informacion General</h2>
                 <div class="form-group">
-                    <label for="tm">Tipo de Mercancia</label>
+                    <label for="Tipo_de_mercancia">Tipo de Mercancia</label>
                     <select id="Tipo_de_mercancia" name="Tipo_de_mercancia">
                         <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="no_regulada">No Regulada</option>
-                        <option value="regulada">Regulada</option>
+                        <option value="No regulada">No Regulada</option>
+                        <option value="Regulada">Regulada</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Documento de movilización (Presenta/No presenta)</label>
-                    <select name="" id="">
+                    <label for="doc_mov_presenta">Documento de movilización (Presenta/No presenta)</label>
+                    <select  id="doc_mov_presenta" name="doc_mov_presenta">
                         <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="no_regulada">No Presenta</option>
-                        <option value="regulada">Presenta</option>
+                        <option value="No presenta">No Presenta</option>
+                        <option value="Presenta">Presenta</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="address">Tipo de documento de movilización</label>
+                    <label for="Tipo_de_doc">Tipo de documento de movilización</label>
                     <input type="text" id="Tipo_de_doc" name="Tipo_de_doc">
                 </div>
                 <div class="form-group">
-                    <label for="city">Folio del dodumento de movilizacion</label>
-                    <input type="text" id="city" name="city">
+                    <label for="folio_doc_mov">Folio del documento de movilizacion</label>
+                    <input type="text" id="folio_doc_mov" name="folio_doc_mov">
                 </div>
                 <div class="form-group">
-                    <label for="zip">Tipo de Revision</label>
-                    <select name="" id="">
+                    <label for="tipo_revision">Tipo de Revision</label>
+                    <select  id="tipo_revision" name="tipo_revision">
                         <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="no_regulada">Fisica</option>
-                        <option value="regulada">Documental</option>
+                        <option value="Fisica">Fisica</option>
+                        <option value="Documental">Documental</option>
                     </select>
                 </div>
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'personal')">Previous</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'education')">Next</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'sitio_inspeccion')">Anterior</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'info_mercancia')">Siguiente</button>
                 </div>
             </div>
             
@@ -101,48 +101,48 @@
             <div id="info_mercancia" class="tabcontent">
                 <h2>Informacion de la Mercancia</h2>
                 <div class="form-group">
-                    <label for="highestDegree">Mercancia</label>
+                    <label for="mercancia">Mercancia</label>
                    <input type="text" id="mercancia" name="mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="institution">Variedad de la mercancia</label>
+                    <label for="variedad_mercancia">Variedad de la mercancia</label>
                     <input type="text" id="variedad_mercancia" name="variedad_mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="fieldOfStudy">Presentacion de la mercancia</label>
+                    <label for="P_mercancia">Presentacion de la mercancia</label>
                     <input type="text" id="P_mercancia" name="P_mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="graduationYear">Tipo de embalaje</label>
+                    <label for="tipo_embalaje">Tipo de embalaje</label>
                     <input type="text" id="tipo_embalaje" name="tipo_embalaje">
                 </div>
                 <div class="form-group">
-                    <label for="graduationYear">Cantidad</label>
+                    <label for="cantidad">Cantidad</label>
                     <input type="number" id="cantidad" name="cantidad">
                 </div>
                  <div class="form-group">
-                    <label for="graduationYear">Peso</label>
+                    <label for="peso">Peso</label>
                     <input type="number" id="peso" name="peso">
                 </div>
 
                  <div class="form-group">
-                    <label for="graduationYear">Cantidad Total</label>
+                    <label for="cantidad_total">Cantidad Total</label>
                     <input type="text" id="cantidad_total" name="cantidad_total">
                 </div>
 
                  <div class="form-group">
-                    <label for="graduationYear">Unidad de medida</label>
+                    <label for="unidad_medida">Unidad de medida</label>
                     <input type="text" id="unidad_medida" name="unidad_medida" placeholder="Kilogramos">
                 </div>
 
                  <div class="form-group">
-                    <label for="graduationYear">Motivo de movilizacion</label>
+                    <label for="motivo_mov">Motivo de movilizacion</label>
                     <input type="text" id="motivo_mov" name="motivo_mov">
                 </div>
 
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'contact')">Anterior</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'employment')">Siguiente</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'info_general')">Anterior</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'info_carga')">Siguiente</button>
                 </div>
             </div>
             
@@ -190,8 +190,8 @@
                     <input type="text" id="fleje" name="fleje">
                 </div>
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'info_mercancia')">Anterior</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'incumplimiento_federal')">Siguiente</button>
                 </div>
             </div>
 
@@ -199,8 +199,12 @@
             <div id="incumplimiento_federal" class="tabcontent">
                 <h2>Incumplimiento Federal</h2>
                 <div class="form-group">
-                    <label for="FcumpleNoCumple">Cumple / No cumple:</label>
-                    <input type="text" id="FcumpleNoCumple" name="FcumpleNoCumple">
+                    <label for="FcumpleNoCumple">Si cumple / No cumple:</label>
+                    <select  id="FcumpleNoCumple" name="FcumpleNoCumple">
+                        <option value="Elige una opcion"> Elige una opcion </option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="FresultadoVerificacion">Resultado de la verificación e inspección:</label>
@@ -215,8 +219,8 @@
                     <input type="text" id="FfolioActa" name="FfolioActa">
                 </div>
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'info_carga')">Anterior</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'incumplimiento_estatal')">Siguiente</button>
                 </div>
             </div>
 
@@ -224,8 +228,12 @@
             <div id="incumplimiento_estatal" class="tabcontent">
                 <h2>Incumplimiento Estatal</h2>
                 <div class="form-group">
-                    <label for="EcumpleNoCumple">Cumple / No cumple:</label>
-                    <input type="text" id="EcumpleNoCumple" name="EcumpleNoCumple">
+                    <label for="EcumpleNoCumple">Si cumple / No cumple:</label>
+                    <select  id="EcumpleNoCumple" name="EcumpleNoCumple">
+                        <option value="Elige una opcion"> Elige una opcion </option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="EresultadoVerificacion">Resultado de la verificación e inspección:</label>
@@ -240,22 +248,22 @@
                     <input type="text" id="EfolioActa" name="EfolioActa">
                 </div>
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'education')">Previous</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'additional')">Next</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'incumplimiento_federal')">Anterior</button>
+                    <button type="button" class="next-btn" onclick="openTab(event, 'deca')">Siguiente</button>
                 </div>
             </div>
 
             
             <!-- Datos de expedición del Certificado de Aportación -->
-            <div id="DECA" class="tabcontent">
-                <h2>Datos de expedición del Certificado de Aportación</h2>
+            <div id="deca" class="tabcontent">
+                <h2>Datos de Expedición del Certificado de Aportación</h2>
                 <div class="form-group">
                     <label for="numeroFolio">Número de Folio:</label>
                     <input type="text" id="numeroFolio" name="numeroFolio">
                 </div>
                 <div class="form-group">
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha">
+                    <label for="fecha_deca">Fecha:</label>
+                    <input type="date" id="fecha_deca" name="fecha_deca">
                 </div>
                 <div class="form-group">
                     <label for="productor">Productor:</label>
@@ -314,7 +322,7 @@
                     <label for="terms">Accepto que todos los datos son correctos</label>
                 </div>
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'employment')">Previous</button>
+                    <button type="button" class="prev-btn" onclick="openTab(event, 'incumplimiento_estatal')">Anterior</button>
                     <button type="submit" class="submit-btn">Enviar</button>
                    </div>
             </div>

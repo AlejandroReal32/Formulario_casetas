@@ -4,21 +4,21 @@ function openTab(evt, tabName) {
     for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    
     // Remove active class from all tab buttons
     const tablinks = document.getElementsByClassName("tablinks");
     for (let i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    
-    // Show the current tab and add active class to the button
+    // Show the current tab
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-    
-    // If it's the first tab, make sure the first tab button is active
-    // if (tabName === 'personal') {
-    //     tablinks[0].className += " active";
-    // }
+    // Add active class to the button if evt is a button
+    if (evt && evt.currentTarget && evt.currentTarget.classList) {
+        evt.currentTarget.className += " active";
+    } else if(tabName) {
+        // Try to activate the correct tab button if evt is not a button
+        const btn = document.querySelector('.tab button[onclick*="' + tabName + '"]');
+        if(btn) btn.className += " active";
+    }
 }
 
 // Form validation before submission
@@ -28,7 +28,7 @@ document.getElementById('multiTabForm').addEventListener('submit', function(e) {
     if (!termsChecked) {
         alert('Accepto que todos los datos son correctos');
         e.preventDefault();
-        openTab(e, 'DECA');
+        openTab(e, 'deca');
         document.getElementById('terms').focus();
     }
     
