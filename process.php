@@ -10,65 +10,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Recoger datos del formulario
-    $tipositioInspeccion = $_POST['tipositioInspeccion'] ?? '';
-    $entidad = $_POST['entidad'] ?? '';
-    $sitio = $_POST['sitio'] ?? '';
+    // Recoger datos del formulario y convertir a mayúsculas
+    function to_upper($str) {
+        return mb_strtoupper($str, 'UTF-8');
+    }
+
+    $tipositioInspeccion = to_upper($_POST['tipositioInspeccion'] ?? '');
+    $entidad = to_upper($_POST['entidad'] ?? '');
+    $sitio = to_upper($_POST['sitio'] ?? '');
     $fecha = $_POST['fecha'] ?? '';
     $hora = $_POST['hora'] ?? '';
 
-    $Tipo_de_mercancia = $_POST['Tipo_de_mercancia'] ?? '';
-    $doc_mov_presenta = $_POST['doc_mov_presenta'] ?? '';
-    $Tipo_de_doc = $_POST['Tipo_de_doc'] ?? '';
-    $folio_doc_mov = $_POST['folio_doc_mov'] ?? '';
-    $tipo_revision = $_POST['tipo_revision'] ?? '';
+    $Tipo_de_mercancia = to_upper($_POST['Tipo_de_mercancia'] ?? '');
+    $doc_mov_presenta = to_upper($_POST['doc_mov_presenta'] ?? '');
+    $Tipo_de_doc = to_upper($_POST['Tipo_de_doc'] ?? '');
+    $folio_doc_mov = to_upper($_POST['folio_doc_mov'] ?? '');
+    $tipo_revision = to_upper($_POST['tipo_revision'] ?? '');
 
-    $mercancia = $_POST['mercancia'] ?? '';
-    $variedad_mercancia = $_POST['variedad_mercancia'] ?? '';
-    $P_mercancia = $_POST['P_mercancia'] ?? '';
-    $tipo_embalaje = $_POST['tipo_embalaje'] ?? '';
-    $cantidad = $_POST['cantidad'] ?? '';
-    $peso = $_POST['peso'] ?? '';
-    $cantidad_total = $_POST['cantidad_total'] ?? '';
-    $unidad_medida = $_POST['unidad_medida'] ?? '';
-    $motivo_mov = $_POST['motivo_mov'] ?? '';
+    $mercancia = to_upper($_POST['mercancia'] ?? '');
+    $variedad_mercancia = to_upper($_POST['variedad_mercancia'] ?? '');
+    $P_mercancia = to_upper($_POST['P_mercancia'] ?? '');
+    $tipo_embalaje = to_upper($_POST['tipo_embalaje'] ?? '');
+    $cantidad = to_upper($_POST['cantidad'] ?? '');
+    $peso = to_upper($_POST['peso'] ?? '');
+    $cantidad_total = to_upper($_POST['cantidad_total'] ?? '');
+    $unidad_medida = to_upper($_POST['unidad_medida'] ?? '');
+    $motivo_mov = to_upper($_POST['motivo_mov'] ?? '');
 
-    $estadoOrigen = $_POST['estadoOrigen'] ?? '';
-    $municipioOrigen = $_POST['municipioOrigen'] ?? '';
-    $estadoDestino = $_POST['estadoDestino'] ?? '';
-    $municipioDestino = $_POST['municipioDestino'] ?? '';
-    $empresaOrigen = $_POST['empresaOrigen'] ?? '';
-    $empresaDestino = $_POST['empresaDestino'] ?? '';
-    $tipoVehiculo = $_POST['tipoVehiculo'] ?? '';
-    $descripcionVehiculo = $_POST['descripcionVehiculo'] ?? '';
-    $placas = $_POST['placas'] ?? '';
-    $fleje = $_POST['fleje'] ?? '';
+    $estadoOrigen = to_upper($_POST['estadoOrigen'] ?? '');
+    $municipioOrigen = to_upper($_POST['municipioOrigen'] ?? '');
+    $estadoDestino = to_upper($_POST['estadoDestino'] ?? '');
+    $municipioDestino = to_upper($_POST['municipioDestino'] ?? '');
+    $empresaOrigen = to_upper($_POST['empresaOrigen'] ?? '');
+    $empresaDestino = to_upper($_POST['empresaDestino'] ?? '');
+    $tipoVehiculo = to_upper($_POST['tipoVehiculo'] ?? '');
+    $descripcionVehiculo = to_upper($_POST['descripcionVehiculo'] ?? '');
+    $placas = to_upper($_POST['placas'] ?? '');
+    $fleje = to_upper($_POST['fleje'] ?? '');
 
-    $FcumpleNoCumple = $_POST['FcumpleNoCumple'] ?? '';
-    $FresultadoVerificacion = $_POST['FresultadoVerificacion'] ?? '';
-    $FaccionResultante = $_POST['FaccionResultante'] ?? '';
-    $FfolioActa = $_POST['FfolioActa'] ?? '';
+    $FcumpleNoCumple = to_upper($_POST['FcumpleNoCumple'] ?? '');
+    $FresultadoVerificacion = to_upper($_POST['FresultadoVerificacion'] ?? '');
+    $FaccionResultante = to_upper($_POST['FaccionResultante'] ?? '');
+    $FfolioActa = to_upper($_POST['FfolioActa'] ?? '');
 
-    $EcumpleNoCumple = $_POST['EcumpleNoCumple'] ?? '';
-    $EresultadoVerificacion = $_POST['EresultadoVerificacion'] ?? '';
-    $EaccionResultante = $_POST['EaccionResultante'] ?? '';
-    $EfolioActa = $_POST['EfolioActa'] ?? '';
+    $EcumpleNoCumple = to_upper($_POST['EcumpleNoCumple'] ?? '');
+    $EresultadoVerificacion = to_upper($_POST['EresultadoVerificacion'] ?? '');
+    $EaccionResultante = to_upper($_POST['EaccionResultante'] ?? '');
+    $EfolioActa = to_upper($_POST['EfolioActa'] ?? '');
 
-    $numeroFolio = $_POST['numeroFolio'] ?? '';
+    $numeroFolio = to_upper($_POST['numeroFolio'] ?? '');
     $fecha_deca = $_POST['fecha_deca'] ?? '';
-    $productor = $_POST['productor'] ?? '';
-    $numeroInscripcion = $_POST['numeroInscripcion'] ?? '';
-    $numeroTarjeta = $_POST['numeroTarjeta'] ?? '';
-    $localidad = $_POST['localidad'] ?? '';
-    $predio = $_POST['predio'] ?? '';
-    $noSello = $_POST['noSello'] ?? '';
-    $campanasFitosanitarias = $_POST['campanasFitosanitarias'] ?? '';
-    $expedidoEn = $_POST['expedidoEn'] ?? '';
+    $productor = to_upper($_POST['productor'] ?? '');
+    $numeroInscripcion = to_upper($_POST['numeroInscripcion'] ?? '');
+    $numeroTarjeta = to_upper($_POST['numeroTarjeta'] ?? '');
+    $localidad = to_upper($_POST['localidad'] ?? '');
+    $predio = to_upper($_POST['predio'] ?? '');
+    $noSello = to_upper($_POST['noSello'] ?? '');
+    $campanasFitosanitarias = to_upper($_POST['campanasFitosanitarias'] ?? '');
+    $expedidoEn = to_upper($_POST['expedidoEn'] ?? '');
     $fechaExpedicion = $_POST['fechaExpedicion'] ?? '';
-    $diasVigencia = $_POST['diasVigencia'] ?? '';
-    $jlsvAutoriza = $_POST['jlsvAutoriza'] ?? '';
-    $personalInspeccion = $_POST['personalInspeccion'] ?? '';
-    $observaciones = $_POST['observaciones'] ?? '';
+    $diasVigencia = to_upper($_POST['diasVigencia'] ?? '');
+    $jlsvAutoriza = to_upper($_POST['jlsvAutoriza'] ?? '');
+    $personalInspeccion = to_upper($_POST['personalInspeccion'] ?? '');
+    $observaciones = to_upper($_POST['observaciones'] ?? '');
 
     // Insertar en sitio_inspeccion
     $conn->query("INSERT INTO sitio_inspeccion (tipositioInspeccion, entidad, sitio, fecha, hora) VALUES ('$tipositioInspeccion', '$entidad', '$sitio', '$fecha', '$hora')");

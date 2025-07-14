@@ -105,6 +105,10 @@ textarea {
     box-sizing: border-box;
     font-size: 16px;
 }
+/* Convert text input to uppercase */
+input[type="text"], textarea {
+    text-transform: uppercase;
+}
 
 textarea {
     resize: vertical;

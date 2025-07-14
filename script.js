@@ -29,3 +29,12 @@ document.getElementById('multiTabForm').addEventListener('submit', function(e) {
     
     // If all validations pass, the form will submit
 });
+
+// Convierte a mayúsculas automáticamente al escribir en inputs y textareas
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('input[type="text"], textarea').forEach(function(el) {
+        el.addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+        });
+    });
+});
