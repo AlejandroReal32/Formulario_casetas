@@ -11,14 +11,9 @@ function openTab(evt, tabName) {
     }
     // Show the current tab
     document.getElementById(tabName).style.display = "block";
-    // Add active class to the button if evt is a button
-    if (evt && evt.currentTarget && evt.currentTarget.classList) {
-        evt.currentTarget.className += " active";
-    } else if(tabName) {
-        // Try to activate the correct tab button if evt is not a button
-        const btn = document.querySelector('.tab button[onclick*="' + tabName + '"]');
-        if(btn) btn.className += " active";
-    }
+    // Always activate the correct tab button
+    const btn = document.querySelector('.tab button[onclick*="' + tabName + '"]');
+    if(btn) btn.className += " active";
 }
 
 // Form validation before submission

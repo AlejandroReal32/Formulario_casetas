@@ -98,8 +98,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <div class="form-container">
-            <h1>Form Submission Successful</h1>
-            <p>Thank you for submitting your information. Here\'s what we received:</p>';
+            <h1>Formulario enviado con exito</h1>
+            <p>Gracias por enviar su información. Esto es lo que recibimos:</p>';
 
     echo '<h2>Sitio de Inspeccion</h2><table>';
     echo '<tr><td>Tipo de Sitio de Inspeccion:</td><td>' . htmlspecialchars($tipositioInspeccion) . '</td></tr>';

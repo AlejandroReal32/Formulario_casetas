@@ -73,7 +73,7 @@ CREATE TABLE incumplimiento_estatal (
 CREATE TABLE deca (
     id INT PRIMARY KEY AUTO_INCREMENT,
     numeroFolio VARCHAR(100),
-    fecha_deca DATE,
+    fecha DATE,
     productor VARCHAR(100),
     numeroInscripcion VARCHAR(100),
     numeroTarjeta VARCHAR(100),

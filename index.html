@@ -28,7 +28,7 @@
                 <h2>Sitio de Inspeccion</h2>
                 <div class="form-group">
                     <label for="tipositioInspeccion">Tipo de Sitio de Inspeccion</label>
-                    <input type="text" id="tipositioInspeccion" name="tipositioInspeccion" required>
+                    <input type="text" id="tipositioInspeccion" name="tipositioInspeccion" value="CIA" placeholder="CIA" required readonly>
                 </div>
                 <div class="form-group">
                     <label for="entidad">Entidad Federativa</label>
@@ -37,10 +37,11 @@
                 <div class="form-group">
                     <label for="sitio">Sitio de Inspeccion</label>
                     <select id="sitio" name="sitio">
-                        <option value="Elige una opcion"> Elige una opcion </option>
+                        <option value="NO APLICA">NO APLICA</option>
                         <option value="San Jose de Gracias Libre">San Jose de Gracias Libre</option>
                         <option value="San Jose de Gracias Cuota">San Jose de Gracias Cuota</option>
                         <option value="La Bayona">La Bayona</option>
+                        <option value="OTRO">OTRO</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -60,19 +61,17 @@
             <div id="info_general" class="tabcontent" >
                 <h2>Informacion General</h2>
                 <div class="form-group">
-                    <label for="Tipo_de_mercancia">Tipo de Mercancia</label>
+                    <label for="Tipo_de_mercancia">Tipo de Mercancia: (ELIGE UNA OPCION)</label>
                     <select id="Tipo_de_mercancia" name="Tipo_de_mercancia">
-                        <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="No regulada">No Regulada</option>
-                        <option value="Regulada">Regulada</option>
+                        <option value="NO REGULADA">NO REGULADA</option>
+                        <option value="REGULADA">REGULADA</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="doc_mov_presenta">Documento de movilización (Presenta/No presenta)</label>
+                    <label for="doc_mov_presenta">Documento de movilización: (ELIGE UNA OPCION)</label>
                     <select  id="doc_mov_presenta" name="doc_mov_presenta">
-                        <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="No presenta">No Presenta</option>
-                        <option value="Presenta">Presenta</option>
+                        <option value="NO PRESENTA">NO PRESENTA</option>
+                        <option value="PRESENTA">PRESENTA</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -84,11 +83,11 @@
                     <input type="text" id="folio_doc_mov" name="folio_doc_mov">
                 </div>
                 <div class="form-group">
-                    <label for="tipo_revision">Tipo de Revision</label>
+                    <label for="tipo_revision">Tipo de Revision: (ELIGE UNA OPCION)</label>
                     <select  id="tipo_revision" name="tipo_revision">
-                        <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="Fisica">Fisica</option>
-                        <option value="Documental">Documental</option>
+                        <option value="NO APLICA">NO APLICA</option>
+                        <option value="FISICA">FISICA</option>
+                        <option value="DOCUMENTAL">DOCUMENTAL</option>
                     </select>
                 </div>
                 <div class="button-group">
@@ -109,12 +108,25 @@
                     <input type="text" id="variedad_mercancia" name="variedad_mercancia">
                 </div>
                 <div class="form-group">
-                    <label for="P_mercancia">Presentacion de la mercancia</label>
-                    <input type="text" id="P_mercancia" name="P_mercancia">
+                    <label for="P_mercancia">Presentacion de la mercancia: (ELIGE UNA OPCION)</label>
+                    <select  id="P_mercancia" name="P_mercancia">
+                        <option value="NO APLICA">NO APLICA</option>
+                        <option value="FRUTO">FRUTO</option>
+                        <option value="GRANO">GRANO</option>
+                        <option value="TUBERCULO O RIZOMA">TUBERCULO O RIZOMA</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="tipo_embalaje">Tipo de embalaje</label>
-                    <input type="text" id="tipo_embalaje" name="tipo_embalaje">
+                    <label for="tipo_embalaje">Tipo de embalaje: (ELIGE UNA OPCION)</label>
+                    <select  id="tipo_embalaje" name="tipo_embalaje">
+                        <option value="NO APLICA">NO APLICA</option>
+                        <option value="A GRANEL">A GRANEL</option>
+                        <option value="ARPILLA">ARPILLA</option>
+                        <option value="BINS">BINS</option>
+                        <option value="CAJA DE CAMPO O COMERCIAL">CAJA DE CAMPO O COMERCIAL</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Cantidad</label>
@@ -131,13 +143,24 @@
                 </div>
 
                  <div class="form-group">
-                    <label for="unidad_medida">Unidad de medida</label>
-                    <input type="text" id="unidad_medida" name="unidad_medida" placeholder="Kilogramos">
+                    <label for="unidad_medida">Unidad de medida: (ELIGE UNA OPCION)</label>
+                    <select  id="unidad_medida" name="unidad_medida">
+                        <option value="NO APLICA">NO APLICA</option>
+                        <option value="KILOGRAMOS">KILOGRAMOS</option>
+                        <option value="TONELADAS">TONELADAS</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
                 </div>
 
                  <div class="form-group">
-                    <label for="motivo_mov">Motivo de movilizacion</label>
-                    <input type="text" id="motivo_mov" name="motivo_mov">
+                    <label for="motivo_mov">Motivo de movilizacion: (ELIGE UNA OPCION)</label>
+                    <select  id="motivo_mov" name="motivo_mov">
+                          <option value="NO APLICA">NO APLICA</option>
+                        <option value="CONSUMO HUMANO">CONSUMO HUMANO</option>
+                        <option value="EMPACADORA">EMPACADORA</option>
+                        <option value="INDUSTRIALIZACION">INDUSTRIALIZACION</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
                 </div>
 
                 <div class="button-group">
@@ -174,12 +197,29 @@
                     <input type="text" id="empresaDestino" name="empresaDestino">
                 </div>
                 <div class="form-group">
-                    <label for="tipoVehiculo">Tipo de vehículo:</label>
-                    <input type="text" id="tipoVehiculo" name="tipoVehiculo">
+                    <label for="tipoVehiculo">Tipo de vehículo:(ELIGE UNA OPCION)</label>
+                    <select  id="tipoVehiculo" name="tipoVehiculo">
+                        <option value="NO APLICA">NO APLICA</option>
+                        <option value="CAMION RABON">CAMION RABON</option>
+                        <option value="CAMION TORTON">CAMION TORTON</option>
+                        <option value="CAMIONETA 3-7 1/2 TON">CAMIONETA 3-7 1/2 TON</option>
+                        <option value="PICK UP">PICK UP</option>
+                        <option value="FULL DOBLE SEMIREMOLQUE">FULL DOBLE SEMIREMOLQUE</option>
+                        <option value="REMOLQUE">REMOLQUE</option>
+                        <option value="TRAILER">TRAILER</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="descripcionVehiculo">Descripción de vehículo:</label>
-                    <input type="text" id="descripcionVehiculo" name="descripcionVehiculo">
+                    <label for="descripcionVehiculo">Descripción de vehículo: (ELIGE UNA OPCION)</label>
+                    <select  id="descripcionVehiculo" name="descripcionVehiculo">
+                        <option value="NO APLICA">NO APLICA</option>
+                        <option value="CAJA SECA">CAJA SECA</option>
+                        <option value="PLATAFORMA">PLATAFORMA</option>
+                        <option value="REDILA">REDILA</option>
+                        <option value="TERMOREGULADO">TERMOREGULADO</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="placas">Placas:</label>
@@ -199,11 +239,10 @@
             <div id="incumplimiento_federal" class="tabcontent">
                 <h2>Incumplimiento Federal</h2>
                 <div class="form-group">
-                    <label for="FcumpleNoCumple">Si cumple / No cumple:</label>
+                    <label for="FcumpleNoCumple">Si cumple / No cumple:(ELIGE UNA OPCION)</label>
                     <select  id="FcumpleNoCumple" name="FcumpleNoCumple">
-                        <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="Si">Si</option>
-                        <option value="No">No</option>
+                        <option value="SI">SI</option>
+                        <option value="NO">NO</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -228,11 +267,10 @@
             <div id="incumplimiento_estatal" class="tabcontent">
                 <h2>Incumplimiento Estatal</h2>
                 <div class="form-group">
-                    <label for="EcumpleNoCumple">Si cumple / No cumple:</label>
+                    <label for="EcumpleNoCumple">Si cumple / No cumple:(ELIGE UNA OPCION)</label>
                     <select  id="EcumpleNoCumple" name="EcumpleNoCumple">
-                        <option value="Elige una opcion"> Elige una opcion </option>
-                        <option value="Si">Si</option>
-                        <option value="No">No</option>
+                        <option value="SI">SI</option>
+                        <option value="NO">NO</option>
                     </select>
                 </div>
                 <div class="form-group">
