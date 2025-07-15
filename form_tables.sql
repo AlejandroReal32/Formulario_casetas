@@ -29,9 +29,9 @@ CREATE TABLE info_mercancia (
     variedad_mercancia VARCHAR(100),
     P_mercancia VARCHAR(100),
     tipo_embalaje VARCHAR(100),
-    cantidad INT,
-    peso DECIMAL(10,2),
-    cantidad_total VARCHAR(100),
+    cantidad DECIMAL(15,2),
+    peso DECIMAL(15,2),
+    cantidad_total DECIMAL(15,2),
     unidad_medida VARCHAR(50),
     motivo_mov VARCHAR(100)
 );

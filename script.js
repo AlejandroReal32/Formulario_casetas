@@ -38,3 +38,13 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Calcular el total basado en cantidad y peso
+document.getElementById('cantidad').addEventListener('input', calcularTotal);
+document.getElementById('peso').addEventListener('input', calcularTotal);
+
+function calcularTotal() {
+    const cantidad = parseFloat(document.getElementById('cantidad').value) || 0;
+    const peso = parseFloat(document.getElementById('peso').value) || 0;
+    document.getElementById('cantidad_total').value = cantidad * peso;
+}

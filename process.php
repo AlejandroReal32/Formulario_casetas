@@ -107,11 +107,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo '<h2>Sitio de Inspeccion</h2><table>';
     echo '<tr><td>Tipo de Sitio de Inspeccion:</td><td>' . htmlspecialchars($tipositioInspeccion) . '</td></tr>';
-    echo '<tr><td>Entidad:</td><td>' . htmlspecialchars($entidad) . '</td></tr>';
-    echo '<tr><td>Sitio:</td><td>' . htmlspecialchars($sitio) . '</td></tr>';
-    echo '<tr><td>Fecha:</td><td>' . htmlspecialchars($fecha) . '</td></tr>';
-    echo '<tr><td>Hora:</td><td>' . htmlspecialchars($hora) . '</td></tr>';
-    echo '</table>';
+    echo '<tr><td>Entidad:</td><td>'                     . htmlspecialchars($entidad) . '</td></tr>';
+    echo '<tr><td>Sitio:</td><td>'                       . htmlspecialchars($sitio) . '</td></tr>';
+    echo '<tr><td>Fecha:</td><td>'                       . htmlspecialchars($fecha) . '</td></tr>';
+    echo '<tr><td>Hora:</td><td>'                        . htmlspecialchars($hora) . '</td></tr>';
+    echo '</table>'; 
 
     echo '<h2>Informacion General</h2><table>';
     echo '<tr><td>Tipo de Mercancia:</td><td>' . htmlspecialchars($Tipo_de_mercancia) . '</td></tr>';
