@@ -19,11 +19,11 @@ body {
 /* Login container */
 .login-container {
     background: rgba(255,255,255,0.92);
-    padding: 32px 28px 24px 28px;
+    padding: 2px 28px 24px 28px;
     border-radius: 22px;
     box-shadow: 0 8px 32px rgba(60, 80, 60, 0.13);
     width: 100%;
-    max-width: 370px;
+    max-width: 400px;
     transform: translateY(0);
     transition: transform 0.3s ease;
     border: 1.5px solid #e3eecb;
@@ -49,7 +49,7 @@ body {
 
 .login-header h1 {
     color: #0da108;
-    font-size: 24px;
+    font-size: 17px;
     margin-bottom: 6px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -280,7 +280,7 @@ body {
 
 /* Logo Cesavenay */
 #logo-cesavenay {
-    width: 50%;
+    width: 80%;
     display: inline-block;
     object-fit:contain;
     object-position: 50%;
