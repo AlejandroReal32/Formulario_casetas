@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 // Redirigir según el tipo de usuario
                 if ($usuario["tipo_usuario"] === 'administrador') {
-                    header("Location: ../admin/dashboard.php"); // Redirigir a un dashboard de admin
+                    header("Location: ../admin/dashboard.html"); // Redirigir a un dashboard de admin
                 } else {
                     header("Location: ../form/index.html"); // Redirigir al formulario principal
                 }
