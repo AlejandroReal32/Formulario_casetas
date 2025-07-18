@@ -88,3 +88,21 @@ CREATE TABLE deca (
     personalInspeccion VARCHAR(100),
     observaciones TEXT
 );
+
+-- Tabla para usuarios (personal autorizado)
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    user_email VARCHAR(100) NOT NULL UNIQUE,
+    user_password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla para administradores
+CREATE TABLE administradores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    admin VARCHAR(100) NOT NULL UNIQUE,
+    admin_email VARCHAR(100) NOT NULL UNIQUE,
+    admin_password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
