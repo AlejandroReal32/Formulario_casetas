@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casetas</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="form-container">
-        <img src="./img/Logo-cesavenay.png" id="logo-cesavenay">
-        <h1>Casetas de Inspeccion Agricola</h1>
+        <div class="header-flex">
+            <img src="../img/Logo-cesavenay.png" id="logo-cesavenay">
+            <h1>Casetas de Inspeccion Agricola</h1>
+        </div>
         <!-- Tab Links -->
         <div class="tab">
             <button class="tablinks active" onclick="openTab(event, 'sitio_inspeccion')">Sitio de Inspeccion</button>
@@ -22,17 +24,17 @@
         </div>
         
         <!-- Form with 7 tabs -->
-        <form action="process.php" method="post" id="multiTabForm">
+        <form action="./process.php" method="post" id="multiTabForm">
             <!-- Sitio de Inspeccion -->
             <div id="sitio_inspeccion" class="tabcontent" style="display: block;">
                 <h2>Sitio de Inspeccion</h2>
                 <div class="form-group">
                     <label for="tipositioInspeccion">Tipo de Sitio de Inspeccion</label>
-                    <input type="text" id="tipositioInspeccion" name="tipositioInspeccion" value="CIA" required disabled>
+                    <input type="text" id="tipositioInspeccion" name="tipositioInspeccion" value="CIA" required readonly>
                 </div>
                 <div class="form-group">
                     <label for="entidad">Entidad Federativa</label>
-                    <input type="text" id="entidad"  name="entidad" value="NAYARIT" required disabled>
+                    <input type="text" id="entidad"  name="entidad" value="NAYARIT" required readonly>
                 </div>
                 <div class="form-group">
                     <label for="sitio">Sitio de Inspeccion: (Elige una opción)</label>
@@ -53,7 +55,7 @@
                     <input type="time" id="hora" name="hora" required>
                 </div>
                 <div class="button-group">
-                    <button type="button" class="next-btn" onclick="openTab(event, 'info_general')">Siguiente</button>
+                    <button type="button" class="next-btn" data-next="info_general" onclick="validateSectionAndNext(this)">Siguiente</button>
                 </div>
             </div>
             
@@ -76,11 +78,11 @@
                 </div>
                 <div class="form-group">
                     <label for="Tipo_de_doc">Tipo de documento de movilización</label>
-                    <input type="text" id="Tipo_de_doc" name="Tipo_de_doc">
+                    <input type="text" id="Tipo_de_doc" name="Tipo_de_doc" required>
                 </div>
                 <div class="form-group">
                     <label for="folio_doc_mov">Folio del documento de movilizacion</label>
-                    <input type="text" id="folio_doc_mov" name="folio_doc_mov">
+                    <input type="text" id="folio_doc_mov" name="folio_doc_mov" required>
                 </div>
                 <div class="form-group">
                     <label for="tipo_revision">Tipo de Revision: (Elige una opción)</label>
@@ -91,8 +93,8 @@
                     </select>
                 </div>
                 <div class="button-group">
-                    <button type="button" class="prev-btn" onclick="openTab(event, 'sitio_inspeccion')">Anterior</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'info_mercancia')">Siguiente</button>
+                   <button type="button" class="prev-btn" onclick="openTab(event, 'sitio_inspeccion')">Anterior</button>
+                   <button type="button" class="next-btn" data-next="info_mercancia" onclick="validateSectionAndNext(this)">Siguiente</button>
                 </div>
             </div>
             
@@ -101,11 +103,11 @@
                 <h2>Informacion de la Mercancia</h2>
                 <div class="form-group">
                     <label for="mercancia">Mercancia</label>
-                   <input type="text" id="mercancia" name="mercancia">
+                   <input type="text" id="mercancia" name="mercancia" required>
                 </div>
                 <div class="form-group">
                     <label for="variedad_mercancia">Variedad de la mercancia</label>
-                    <input type="text" id="variedad_mercancia" name="variedad_mercancia">
+                    <input type="text" id="variedad_mercancia" name="variedad_mercancia" required>
                 </div>
                 <div class="form-group">
                     <label for="P_mercancia">Presentacion de la mercancia: (Elige una opción)</label>
@@ -130,16 +132,16 @@
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Cantidad</label>
-                    <input type="number" id="cantidad" name="cantidad">
+                    <input type="number" id="cantidad" name="cantidad" step="any" required>
                 </div>
                  <div class="form-group">
                     <label for="peso">Peso</label>
-                    <input type="number" id="peso" name="peso">
+                    <input type="number" id="peso" name="peso" step="any" required>
                 </div>
 
                  <div class="form-group">
                     <label for="cantidad_total">Cantidad Total</label>
-                    <input type="number" id="cantidad_total" name="cantidad_total" required readonly>
+                    <input type="number" id="cantidad_total" name="cantidad_total" step="any" required readonly>
                 </div>
 
                  <div class="form-group">
@@ -165,7 +167,7 @@
 
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'info_general')">Anterior</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'info_carga')">Siguiente</button>
+                    <button type="button" class="next-btn" data-next="info_carga" onclick="validateSectionAndNext(this)">Siguiente</button>
                 </div>
             </div>
             
@@ -174,27 +176,27 @@
                 <h2>Informacion del Cargamento</h2>
                 <div class="form-group">
                     <label for="estadoOrigen">Estado origen:</label>
-                    <input type="text" id="estadoOrigen" name="estadoOrigen">
+                    <input type="text" id="estadoOrigen" name="estadoOrigen" required>
                 </div>
                 <div class="form-group">
                     <label for="municipioOrigen">Municipio origen:</label>
-                    <input type="text" id="municipioOrigen" name="municipioOrigen">
+                    <input type="text" id="municipioOrigen" name="municipioOrigen" required>
                 </div>
                 <div class="form-group">
                     <label for="estadoDestino">Estado destino:</label>
-                    <input type="text" id="estadoDestino" name="estadoDestino">
+                    <input type="text" id="estadoDestino" name="estadoDestino" required>
                 </div>
                 <div class="form-group">
                     <label for="municipioDestino">Municipio destino:</label>
-                    <input type="text" id="municipioDestino" name="municipioDestino">
+                    <input type="text" id="municipioDestino" name="municipioDestino" required>
                 </div>
                 <div class="form-group">
                     <label for="empresaOrigen">Empresa origen:</label>
-                    <input type="text" id="empresaOrigen" name="empresaOrigen">
+                    <input type="text" id="empresaOrigen" name="empresaOrigen" required>
                 </div>
                 <div class="form-group">
                     <label for="empresaDestino">Empresa destino:</label>
-                    <input type="text" id="empresaDestino" name="empresaDestino">
+                    <input type="text" id="empresaDestino" name="empresaDestino" required>
                 </div>
                 <div class="form-group">
                     <label for="tipoVehiculo">Tipo de vehículo:(Elige una opción)</label>
@@ -223,15 +225,15 @@
                 </div>
                 <div class="form-group">
                     <label for="placas">Placas:</label>
-                    <input type="text" id="placas" name="placas">
+                    <input type="text" id="placas" name="placas" required>
                 </div>
                 <div class="form-group">
                     <label for="fleje">Fleje:</label>
-                    <input type="text" id="fleje" name="fleje">
+                    <input type="text" id="fleje" name="fleje" required>
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'info_mercancia')">Anterior</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'incumplimiento_federal')">Siguiente</button>
+                    <button type="button" class="next-btn" data-next="incumplimiento_federal" onclick="validateSectionAndNext(this)">Siguiente</button>
                 </div>
             </div>
 
@@ -247,19 +249,19 @@
                 </div>
                 <div class="form-group">
                     <label for="FresultadoVerificacion">Resultado de la verificación e inspección:</label>
-                    <textarea id="FresultadoVerificacion" name="FresultadoVerificacion" rows="3"></textarea>
+                    <textarea id="FresultadoVerificacion" name="FresultadoVerificacion" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="FaccionResultante">Acción resultante:</label>
-                    <textarea id="FaccionResultante" name="FaccionResultante" rows="3"></textarea>
+                    <textarea id="FaccionResultante" name="FaccionResultante" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="FfolioActa">Folio del Acta Circunstanciada:</label>
-                    <input type="text" id="FfolioActa" name="FfolioActa">
+                    <input type="text" id="FfolioActa" name="FfolioActa" required>
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'info_carga')">Anterior</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'incumplimiento_estatal')">Siguiente</button>
+                    <button type="button" class="next-btn" data-next="incumplimiento_estatal" onclick="validateSectionAndNext(this)">Siguiente</button>
                 </div>
             </div>
 
@@ -275,19 +277,19 @@
                 </div>
                 <div class="form-group">
                     <label for="EresultadoVerificacion">Resultado de la verificación e inspección:</label>
-                    <textarea id="EresultadoVerificacion" name="EresultadoVerificacion" rows="3"></textarea>
+                    <textarea id="EresultadoVerificacion" name="EresultadoVerificacion" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="EaccionResultante">Acción resultante:</label>
-                    <textarea id="EaccionResultante" name="EaccionResultante" rows="3"></textarea>
+                    <textarea id="EaccionResultante" name="EaccionResultante" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="EfolioActa">Folio del Acta Circunstanciada:</label>
-                    <input type="text" id="EfolioActa" name="EfolioActa">
+                    <input type="text" id="EfolioActa" name="EfolioActa" required>
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'incumplimiento_federal')">Anterior</button>
-                    <button type="button" class="next-btn" onclick="openTab(event, 'deca')">Siguiente</button>
+                    <button type="button" class="next-btn" data-next="deca" onclick="validateSectionAndNext(this)">Siguiente</button>
                 </div>
             </div>
 
@@ -297,63 +299,63 @@
                 <h2>Datos de Expedición del Certificado de Aportación</h2>
                 <div class="form-group">
                     <label for="numeroFolio">Número de Folio:</label>
-                    <input type="text" id="numeroFolio" name="numeroFolio">
+                    <input type="text" id="numeroFolio" name="numeroFolio" required>
                 </div>
                 <div class="form-group">
                     <label for="fecha_deca">Fecha:</label>
-                    <input type="date" id="fecha_deca" name="fecha_deca">
+                    <input type="date" id="fecha_deca" name="fecha_deca" required>
                 </div>
                 <div class="form-group">
                     <label for="productor">Productor:</label>
-                    <input type="text" id="productor" name="productor">
+                    <input type="text" id="productor" name="productor" required>
                 </div>
                 <div class="form-group">
                     <label for="numeroInscripcion">Número de Inscripción:</label>
-                    <input type="text" id="numeroInscripcion" name="numeroInscripcion">
+                    <input type="text" id="numeroInscripcion" name="numeroInscripcion" required>
                 </div>
                 <div class="form-group">
                     <label for="numeroTarjeta">Número de Tarjeta:</label>
-                    <input type="text" id="numeroTarjeta" name="numeroTarjeta">
+                    <input type="text" id="numeroTarjeta" name="numeroTarjeta" required>
                 </div>
                 <div class="form-group">
                     <label for="localidad">Localidad:</label>
-                    <input type="text" id="localidad" name="localidad">
+                    <input type="text" id="localidad" name="localidad" required>
                 </div>
                 <div class="form-group">
                     <label for="predio">Predio:</label>
-                    <input type="text" id="predio" name="predio">
+                    <input type="text" id="predio" name="predio" required>
                 </div>
                 <div class="form-group">
                     <label for="noSello">No. Sello:</label>
-                    <input type="text" id="noSello" name="noSello">
+                    <input type="text" id="noSello" name="noSello" required>
                 </div>
                 <div class="form-group">
                     <label for="campanasFitosanitarias">Campañas Fitosanitarias:</label>
-                    <input type="text" id="campanasFitosanitarias" name="campanasFitosanitarias">
+                    <input type="text" id="campanasFitosanitarias" name="campanasFitosanitarias" required>
                 </div>
                 <div class="form-group">
                     <label for="expedidoEn">Expedido en:</label>
-                    <input type="text" id="expedidoEn" name="expedidoEn">
+                    <input type="text" id="expedidoEn" name="expedidoEn" required>
                 </div>
                 <div class="form-group">
                     <label for="fechaExpedicion">Fecha de expedición:</label>
-                    <input type="date" id="fechaExpedicion" name="fechaExpedicion">
+                    <input type="date" id="fechaExpedicion" name="fechaExpedicion" required>
                 </div>
                 <div class="form-group">
                     <label for="diasVigencia">Días de vigencia:</label>
-                    <input type="number" id="diasVigencia" name="diasVigencia">
+                    <input type="number" id="diasVigencia" name="diasVigencia" required>
                 </div>
                 <div class="form-group">
                     <label for="jlsvAutoriza">JLSV que autoriza:</label>
-                    <input type="text" id="jlsvAutoriza" name="jlsvAutoriza">
+                    <input type="text" id="jlsvAutoriza" name="jlsvAutoriza" required>
                 </div>
                 <div class="form-group">
                     <label for="personalInspeccion">Personal que realiza la inspección:</label>
-                    <input type="text" id="personalInspeccion" name="personalInspeccion">
+                    <input type="text" id="personalInspeccion" name="personalInspeccion" required>
                 </div>
                 <div class="form-group">
                     <label for="observaciones">Observaciones:</label>
-                    <textarea id="observaciones" name="observaciones" rows="3"></textarea>
+                    <textarea id="observaciones" name="observaciones" rows="3" required></textarea>
                 </div>
                 <div class="form-group checkbox-group">
                     <input type="checkbox" id="terms" name="terms" required>
@@ -367,6 +369,6 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

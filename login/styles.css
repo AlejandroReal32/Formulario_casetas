@@ -7,7 +7,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #d4ea66 0%, #6fa24b 100%);
+    background: url('../img/illustration-vegetables-pattern.jpg') repeat, linear-gradient(135deg, #4f7e3f 0%, #6fa24b 100%);
+    background-size: auto;
+    background-blend-mode: lighten;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,14 +18,15 @@ body {
 
 /* Login container */
 .login-container {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    background: rgba(255,255,255,0.92);
+    padding: 32px 28px 24px 28px;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(60, 80, 60, 0.13);
     width: 100%;
-    max-width: 400px;
+    max-width: 370px;
     transform: translateY(0);
     transition: transform 0.3s ease;
+    border: 1.5px solid #e3eecb;
 }
 
 .login-container:hover {
@@ -33,44 +36,58 @@ body {
 /* Header styles */
 .login-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
+}
+
+#logo-cesavenay {
+    width: 90px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .login-header h1 {
-    color: #333;
-    font-size: 28px;
-    margin-bottom: 10px;
+    color: #0da108;
+    font-size: 25px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .login-header p {
-    color: #666;
+    color: #4a5a4a;
     font-size: 14px;
+    margin-bottom: 0;
+    font-weight: 400;
 }
 
 /* Form styles */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    color: #333;
+    margin-bottom: 7px;
+    color: #2d3a2d;
     font-weight: 500;
+    font-size: 15px;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #e1e1e1;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 11px 14px;
+    border: 1.5px solid #cbe6b6;
+    border-radius: 7px;
+    font-size: 15px;
+    background: #f8fbf6;
     transition: border-color 0.3s ease;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #8fc550;
 }
 
 .form-group input:focus + .input-icon {
@@ -84,21 +101,21 @@ body {
 
 .toggle-btn {
     position: absolute;
-    right: 12px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
-    color: #666;
-    font-size: 14px;
-    padding: 4px 8px;
+    color: #7aa945;
+    font-size: 18px;
+    padding: 2px 6px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 .toggle-btn:hover {
-    background-color: #f0f0f0;
+    background-color: #eaf6e2;
 }
 
 /* Remember me and forgot password */
@@ -106,7 +123,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .remember-me {
@@ -115,44 +132,45 @@ body {
 }
 
 .remember-me input {
-    margin-right: 8px;
+    margin-right: 7px;
     width: auto;
 }
 
 .remember-me label {
-    font-size: 14px;
-    color: #666;
+    font-size: 13px;
+    color: #5a6a5a;
     margin-bottom: 0;
 }
 
 .forgot-password {
-    color: #667eea;
+    color: #7aa945;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: color 0.3s ease;
 }
 
 .forgot-password:hover {
-    color: #764ba2;
+    color: #25a820;
 }
 
 /* Login button */
 .login-btn {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 13px;
+    background: linear-gradient(135deg, #8fc550 0%, #64a74d 100%);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 5px;
 }
 
 .login-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.13);
 }
 
 .login-btn:active {
@@ -162,18 +180,19 @@ body {
 /* Signup link */
 .signup-link {
     text-align: center;
-    margin-top: 25px;
-    color: #666;
+    margin-top: 22px;
+    color: #7a7a7a;
+    font-size: 13px;
 }
 
 .signup-link a {
-    color: #667eea;
+    color: #7aa945;
     text-decoration: none;
     font-weight: 500;
 }
 
 .signup-link a:hover {
-    color: #764ba2;
+    color: #25a820;
 }
 
 /* Error message */
@@ -200,12 +219,12 @@ body {
 /* Responsive design */
 @media (max-width: 480px) {
     .login-container {
-        padding: 30px 20px;
-        margin: 20px;
+        padding: 18px 6px;
+        margin: 10px;
+        max-width: 98vw;
     }
-    
     .login-header h1 {
-        font-size: 24px;
+        font-size: 19px;
     }
     
     .remember-forgot {
@@ -256,4 +275,13 @@ body {
     font-size: 12px;
     margin-top: 5px;
     display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Logo Cesavenay */
+#logo-cesavenay {
+    width: 50%;
+    display: inline-block;
+    object-fit:contain;
+    object-position: 50%;
 }

@@ -48,3 +48,28 @@ function calcularTotal() {
     const peso = parseFloat(document.getElementById('peso').value) || 0;
     document.getElementById('cantidad_total').value = cantidad * peso;
 }
+
+
+// Validate section and move to next tab
+function validateSectionAndNext(btn) {
+    // Encuentra la sección/tab actual
+    const section = btn.closest('.tabcontent');
+    // Busca todos los campos requeridos visibles en la sección
+    const requiredFields = section.querySelectorAll('input[required], select[required], textarea[required]');
+    let valid = true;
+    requiredFields.forEach(field => {
+        if (!field.value) {
+            field.classList.add('input-error');
+            valid = false;
+        } else {
+            field.classList.remove('input-error');
+        }
+    });
+    if (!valid) {
+        alert('Por favor, completa todos los campos obligatorios antes de continuar.');
+        return;
+    }
+    // Si todo está bien, avanza a la siguiente sección
+    const nextTab = btn.getAttribute('data-next');
+    openTab(event, nextTab);
+}
