@@ -1,4 +1,9 @@
 <?php
+// Habilitar la visualización de errores para depuración
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 require "conexion.php"; // Usar require para detener la ejecución si la conexión falla
 
@@ -44,5 +49,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->close();
     }
 }
-$conexion->close();
+// Cierra la conexión solo si no es una solicitud POST, o si lo es y ya terminó.
+if (isset($conexion)) {
+    $conexion->close();
+}
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="../img/Logo-cesavenay.png" id="logo-cesavenay" alt="Logo Cesavenay">
+            <h1>BIENVENIDO AL SISTEMA DE REGISTRO</h1>
+            <p>Por favor, ingresa tu usuario y contraseña para acceder</p>
+        </div>
+
+        <?php if (!empty($mensaje)): ?>
+            <div class="error-message"><?php echo $mensaje; ?></div>
+        <?php endif; ?>
+
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="form-group">
+                <label for="username">Nombre de usuario o Email</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="user_password">Contraseña</label>
+                <div class="password-toggle">
+                    <input type="password" id="user_password" name="user_password" required>
+                    <button type="button" class="toggle-btn" onclick="togglePassword()" aria-label="Mostrar/Ocultar contraseña">👁️</button>
+                </div>
+            </div>
+            <div class="remember-forgot">
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit" class="login-btn">Iniciar Sesión</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
