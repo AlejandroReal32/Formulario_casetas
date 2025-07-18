@@ -7,6 +7,42 @@ body {
     color: #333;
 }
 
+.logout-container {
+    position: absolute;
+    top: 20px;
+    left: 235px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logout-btn {
+    background-color: #95a5a6;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #7f8c8d;
+}
+/* Clear Form Button */
+.clear-btn {
+    background-color: #df353d;
+    color: white;
+    padding: 13px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.clear-btn:hover {
+    background-color: #c0392b;
+}
+
 .form-container {
     max-width: 800px;
     margin: 0 auto;
@@ -95,6 +131,35 @@ h2 {
     border-top: none;
     border-radius: 0 0 5px 5px;
     animation: fadeEffect 0.5s;
+}
+
+/* Confirmation page styles */
+#confirmation-data table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#confirmation-data td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#confirmation-data tr:last-child td {
+    border-bottom: none;
+}
+
+#confirmation-data td:first-child {
+    font-weight: bold;
+    color: #333;
+    width: 40%;
+}
+
+#confirmation-data td:last-child {
+    color: #555;
 }
 
 @keyframes fadeEffect {

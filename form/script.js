@@ -71,5 +71,34 @@ function validateSectionAndNext(btn) {
     }
     // Si todo está bien, avanza a la siguiente sección
     const nextTab = btn.getAttribute('data-next');
+    if (nextTab === 'confirmar') {
+        displayConfirmationData();
+    }
     openTab(event, nextTab);
 }
+
+// Display confirmation data in the confirmation tab
+function displayConfirmationData() {
+    const form = document.getElementById('multiTabForm');
+    const data = new FormData(form);
+    const confirmationDiv = document.getElementById('confirmation-data');
+    let html = '<table>';
+    for (const [key, value] of data.entries()) {
+        const label = form.querySelector(`label[for="${key}"]`);
+        const labelText = label ? label.textContent : key;
+        html += `<tr><td><strong>${labelText}:</strong></td><td>${value}</td></tr>`;
+    }
+    html += '</table>';
+    confirmationDiv.innerHTML = html;
+}
+
+// Clear form function
+document.getElementById('clearFormBtn').addEventListener('click', function() {
+    if (confirm('¿Estás seguro de que quieres limpiar todos los campos del formulario?')) {
+        document.getElementById('multiTabForm').reset();
+        // Reset to the first tab
+        openTab(event, 'sitio_inspeccion');
+        // Clear any error messages
+        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+    }
+});

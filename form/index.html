@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <div class="logout-container">
+        <a href="../login/login_user.html" class="logout-btn">Cerrar sesión</a>
+        <button type="button" id="clearFormBtn" class="clear-btn">Limpiar Formulario</button>
+    </div>
+        
     <div class="form-container">
         <div class="header-flex">
             <img src="../img/Logo-cesavenay.png" id="logo-cesavenay">
@@ -21,6 +26,7 @@
             <button class="tablinks" onclick="openTab(event, 'incumplimiento_federal')">Incumplimiento Federal</button>
             <button class="tablinks" onclick="openTab(event, 'incumplimiento_estatal')">Incumplimiento Estatal</button>
             <button class="tablinks" onclick="openTab(event, 'deca')">Datos de Expedicion del Certificado de Aportacion</button>
+            <button class="tablinks" onclick="openTab(event, 'confirmar')">Confirmar y Enviar</button>
         </div>
         
         <!-- Form with 7 tabs -->
@@ -363,10 +369,24 @@
                 </div>
                 <div class="button-group">
                     <button type="button" class="prev-btn" onclick="openTab(event, 'incumplimiento_estatal')">Anterior</button>
-                    <button type="submit" class="submit-btn">Enviar</button>
+                    <button type="button" class="next-btn" data-next="confirmar" onclick="validateSectionAndNext(this)">Revisar y Confirmar</button>
                    </div>
             </div>
         </form>
+
+        <!-- Confirmation Tab -->
+        <div id="confirmar" class="tabcontent">
+            <h2>Confirmar Datos</h2>
+            <p>Por favor, revisa que toda la información sea correcta antes de enviar.</p>
+            <div id="confirmation-data">
+                <!-- Data will be injected here by JavaScript -->
+            </div>
+            <div class="button-group">
+                <button type="button" class="prev-btn" onclick="openTab(event, 'deca')">Corregir</button>
+                <button type="submit" form="multiTabForm" class="submit-btn">Enviar Definitivamente</button>
+            </div>
+        </div>
+
     </div>
 
     <script src="./script.js"></script>

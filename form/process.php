@@ -92,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // Start HTML output
+    
     echo '<!DOCTYPE html>
     <html lang="en">
     <head>
