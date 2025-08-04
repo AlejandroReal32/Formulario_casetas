@@ -102,8 +102,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <div class="logout-container">
+            <a href="../login/login.php" class="logout-btn">Cerrar sesión</a>
+            <a href="index.html" class="clear-btn">Nuevo Formulario</a>
+        </div>
+        
         <div class="form-container">
-            <h1>Formulario enviado con exito</h1>
+            <div class="header-flex">
+                <img src="../img/Logo-cesavenay.png" id="logo-cesavenay">
+                <h1>Formulario enviado con exito</h1>
+            </div>
             <p>Gracias por enviar su información. Esto es lo que recibimos:</p>';
 
     echo '<h2>Sitio de Inspeccion</h2><table>';
@@ -178,6 +186,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '<tr><td>Personal que realiza la inspección:</td><td>' . htmlspecialchars($personalInspeccion) . '</td></tr>';
     echo '<tr><td>Observaciones:</td><td>' . htmlspecialchars($observaciones) . '</td></tr>';
     echo '</table>';
+
+    // Add action buttons
+    echo '<div class="button-group" style="margin-top: 30px; text-align: center;">
+            <a href="index.html" class="next-btn" style="text-decoration: none; display: inline-block;">Llenar Nuevo Formulario</a>
+          </div>';
 
     // End HTML output
     echo '</div></body></html>';

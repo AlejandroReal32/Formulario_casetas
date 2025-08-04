@@ -83,7 +83,7 @@ if (isset($conexion)) {
                 <label for="user_password">Contraseña</label>
                 <div class="password-toggle">
                     <input type="password" id="user_password" name="user_password" required>
-                    <button type="button" class="toggle-btn" onclick="togglePassword()" aria-label="Mostrar/Ocultar contraseña">👁️</button>
+                    <button type="button" class="toggle-btn" onclick="togglePassword()" aria-label="Mostrar/Ocultar contraseña"></button>
                 </div>
             </div>
             <div class="remember-forgot">
